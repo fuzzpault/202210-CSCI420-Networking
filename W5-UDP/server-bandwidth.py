@@ -8,7 +8,7 @@ s.bind( (ip_address, port_number) )
 
 while True:
 	print("Waiting for message...")
-	(msg, addr) = s.recvfrom(4096)
+	(msg, addr) = s.recvfrom(40960)
 
 	print("Got {} bytes from {}".format(len(msg), addr))
 	s.sendto(str(len(msg)).encode('ascii'), addr)
